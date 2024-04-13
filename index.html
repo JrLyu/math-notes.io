@@ -4,28 +4,46 @@
         <!-- For fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap" rel="stylesheet">
         <!-- Link to the CSS file -->
         <link href="styles/style.css" rel="stylesheet" />
         <!-- General Set Up -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
-        <title>My test page</title>
-        <button>Change User</button>
+        <title>Welcome</title>
         <!-- Link to the JS file -->
         <script src="scripts/main.js" defer></script>
     </head>
     <body>
-        <h1> Welcome! </h1>
-        <h2>The photo was taken by <strong>myself</strong>!</h2>
-        <img src="images/frontPic.jpg" atl="My test image" />
-        <p>This is a picture I took by myself. I took it at the following location(s).</p>
-        <ul>
-            <li>Yunnan</li>
-            <li>Lijiang</li>
-            <li>Yulong Snow Mountain</li>
-        </ul>
-        <p>You can know more about it at <a href="https://en.wikipedia.org/wiki/Jade_Dragon_Snow_Mountain">here</a></p>
-        <p>If you want to contact me, please visit my <a href="contacts.html">contact page</a>.</p>
+        <header>
+            <h1>Jiuru's Personal Website</h1>
+        </header>
+        <nav>
+            <h2>Menu Bar</h2>
+            <ul>
+                <li><a href="index.html">Main Page</a></li>
+                <li><a href="photographs/index.html">My Photos</a></li>
+                <li><a href="projects/index.html">Projects</a></li>
+                <li><a href="blogs/index.html">My Blogs</a></li>
+                <li><a href="contacts.html">Contact Me</a></li>
+            </ul>
+            <form>
+                <!-- Search Bar -->
+                <input type="search" name="q" placeholder="Search Something" />
+                <input type="submit" value="Search" />
+            </form>
+        </nav>
+        <main>
+            <h1>Welcome to my webpage!</h1>
+            <h2><img src="images/myPhoto.png" sizes="1px, 2px" alt="My Photo"/> Hello! I am Jiuru.</h2>
+            <p>My name is Jiuru, a sophomore majoring Applied Math and Statistics. In my leisure time, I like travelling and photograph on my way. If you are interested
+                in getting know more about picture I took, please visit <a href="photographs/index.html">photographs</a>.</p>
+            <p>I also compose some learning notes from the classes I am taking and have taken. You can find attached files
+                from this <a href="projects/index.html">page</a>. </p>
+            <p>Also, I am interested in posting some blogs on my <a href="blogs/index.html">blog page</a>.</p>
+        </main>
+        <footer>
+            <h3>If you want to contact me, please visit my <a href="contacts.html">contact page</a></h3>
+        </footer>
     </body>
 </html>
