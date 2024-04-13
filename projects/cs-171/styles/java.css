@@ -1,0 +1,27 @@
+.java {
+    font-family: monospace;
+    font-size: 12pt;
+    margin: 0 auto;
+    padding: 10px 10px;
+    border: 2px solid #2e3257;
+    border-radius: 10px;
+    background-color: #DEE3C1;
+}
+
+code {
+    font-family: monospace;
+    font-size: 12pt;
+}
+
+table, td, th {
+    margin: 0 auto;
+    padding: 2px 2px 5px 5px;
+    text-align: center;
+    border: 2px solid #2e3257;
+    border-radius: 10px;
+    background-color: #627d9a;
+}
+
+td, th {
+    background-color: #DEE3C1;
+}

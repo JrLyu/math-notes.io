@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- For fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!-- Link to the CSS file -->
+        <link href="../../../styles/style.css" rel="stylesheet" />
+        <link href="../styles/java.css" rel="stylesheet" />
+        <!-- General Set Up -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta charset="UTF-8">
+        <title>CS 171 Home Page</title>
+    </head>
+    <body>
+        <header>
+            <h1>Jiuru's Personal Website</h1>
+        </header>
+        <nav>
+            <h2>Menu Bar</h2>
+            <ul>
+                <li><a href="../../../index.html">Main Page</a></li>
+                <li><a href="../.././../photographs/index.html">My Photos</a></li>
+                <li><a href="../../index.html">Projects</a></li>
+                <li><a href="../../../blogs/index.html">My Blogs</a></li>
+                <li><a href="../../../contacts.html">Contact Me</a></li>
+            </ul>
+            <form>
+                <input type="search" name="q" placeholder="Search Something" />
+                <input type="submit" value="Search" />
+            </form>
+        </nav>
+        <main>
+            <h1>CS 171: Java Review</h1>
+            <aside>
+                <h2>Table of Contents</h2>
+            </aside>
+            <section>
+                <h2>Introduction</h2>
+                <dl>
+                    <dt><strong>Algorithm</strong></dt>
+                    <dd>A method for solving a problem expressed as a <em>sequence of steps</em> that is suitable for execution by a computer (machine).</dd>
+                </dl>
+                <h4>Different ways to express algorithms:</h4>
+                <ul>
+                    <li>Natural languages (bad - ambiguous)</li>
+                    <li>Flow charts (good for conceptualization of the algorithm)</li>
+                    <li>Pseudo code (good for algorithm development)</li>
+                    <li>Programming languages (good for communicating the algorithm to a machine because it's unambiguous)</li>
+                </ul>
+                <dl>
+                    <dt><strong>Data structure</strong></dt>
+                    <dd>a way to <em>organize</em> (insert, delete, and retrieve) the data used by an algorithm</dd>
+                    <dd>Example of a data structure: arrays</dd>
+                </dl>
+                <h4> Every data structure has its strengths and its weaknesses:</h4>
+                <ul>
+                    <li>Array: The data is stored in consecutive array elements & The array elements are accessed efficiently using an index.</li>
+                    <li>Strength: efficient (low) storage cost</li>
+                    <li>Weakness: not dynamic (cannot increase in size easily)</li>
+                </ul>
+                <h4>Metrics used to measure the goodness of algorithms:</h4>
+                <ul>
+                    <li><em>Running time</em>: how long does it take for the program to finish</li>
+                    <li><em>Storage requirement</em>: how much memory does the program use to store its information.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Review - Computer Architecture</h2>
+                <h3>The smallest unit of Computer Memory: bit</h3>
+                <ol>
+                    <li>Computers use memory devices built with electronics.</li>
+                    <li>The smallest memory device used by the computer works like a switch. It can be in one of the 2 states:</li>
+                    <ul>
+                        <li>Off state (state 0)</li>
+                        <li>On state (state 1)</li>
+                        <li>0 and 1 are called <em>binary digits</em></li>
+                    </ul>
+                    <li>The smallest memory device is called a <abbr title="binary digit">bit</abbr> (=binary digit)</li>
+                    <li>A row on <em>n</em> bits can be in one of 2<sup><em>n</em></sup> states: each switch can be in 2 states,
+                        and so the total number of combinations is <code>2*2*2*...*2=2<sup><em>n</em></sup></code>.
+                    <li>Byte memory = 8 bits = a memory device that can retain (=remember) 8 binary digits. Since 2<sup>8</sup>=256,
+                        each byte can store one of the 256 possible patterns of binary numbers.</li>
+                    <li>Though humans are very flexible in storing data (can use many different methods), computers can only store
+                        data/information as binary numbers.</li>
+                </ol>
+                <h3>Memory address and Memory content</h3>
+                <ol>
+                    <li>Each memory cell is identified by a unique address (which is a number).</li>
+                    <li>Each memory cell stores a number (that is the data/information stored by the computer).</li>
+                </ol>
+            </section>
+            <section>
+                <h2>Review - Variables in Java</h2>
+                <ol>
+                    <li>What happens inside the computer when we define a variable <code>int a</code>:</li>
+                    <ul>
+                        <li>The computer will find some used memory cells and mark them as used (aka: allocate memory)</li>
+                        <li>The computer equates(=records) the name <code>a</code> to the memory location of the reserved cells.</li>
+                    </ul>
+                    <li>Each variable has a <em>data type</em></li>
+                    <ul>
+                        <li>The data type specifies the kind of information.</li>
+                        <li>Each kind of information has its own way of representation. The way of representation is called a <em>code</em>.</li>
+                    </ul>
+                    <li>Encoding method of a data type:</li>
+                    <ul>
+                        <li>Information of a data type are represented by binary numbers.</li>
+                        <li>The encoding method defines the way to interpret a binary number.</li>
+                    </ul>
+                    <li><mark><em>Data type provide the context to interpret a number and obtain the meaning of the number.</em>
+                        </mark><br> For details, refer to <a href="../codes/datatype.java"><code>datatype.java</code></a></li>
+                    <li>Java's primitive data types:
+                        <table>
+                            <tr>
+                                <th>Data type</th>
+                                <th>Encoding method</th>
+                            </tr>
+                            <tr>
+                                <td><code>byte</code></td>
+                                <td>2's complement encoding using 8 bits</td>
+                            </tr>
+                            <tr>
+                                <td><code>short</code></td>
+                                <td>2's complement encoding using 16 bits</td>
+                            </tr>
+                            <tr>
+                                <td><code>int</code></td>
+                                <td>2's complement encoding using 32 bits</td>
+                            </tr>
+                            <tr>
+                                <td><code>long</code></td>
+                                <td>2's complement encoding using 64 bits</td>
+                            </tr>
+                            <tr>
+                                <td><code>float</code></td>
+                                <td>IEEE 754 encoding using 32 bits</td>
+                            </tr>
+                            <tr>
+                                <td><code>double</code></td>
+                                <td>IEEE 754 encoding using 64 bits</td>
+                            </tr>
+                            <tr>
+                                <td><code>char</code></td>
+                                <td>Unicode encoding using 16 bits</td>
+                            </tr>
+                            <tr>
+                                <td><code>boolean</code></td>
+                                <td>Enumeration encoding using 0=false and 1=true</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>Besides the primitive data types, all other data types in Java are <em>reference data types</em>:</li>
+                    <ul>
+                        <li>Reference: A reference in computer science is a memory address.</li>
+                        <li>Reference data type: A variable of a reference data type stores a memory address.</li>
+                    </ul>
+                    <li>Primitive and reference data types are stored differently:</li>
+                    <ul>
+                        <li>The variable of primitive data types contains a value of that data type.</li>
+                        <li>The variable of reference data types contains a reference to the location where the object is stored.</li>
+                    </ul>
+                </ol>
+            </section>
+            <section>
+                <h2>Review - Programming Language</h2>
+                <dl>
+                    <dt><strong>Programming Language</strong></dt>
+                    <dd>an artificial language designed to convey commands <em>unambiguously</em> to a machine</dd>
+                    <ul>
+                        <li>A programming language has a set of syntax rules to construct commands.</li>
+                        <li>3 types of commands/statements in a procedural programming language:</li>
+                        <ul>
+                            <li>Assignment statement</li>
+                            <li>Selection statement: <code>if</code>, <code>if-else</code></li>
+                            <li>Loop statement: <code>while</code>, <code>for</code>, <code>do-while</code></li>
+                        </ul>
+                        <li>These 3 types of statements are necessary and sufficient to make a programming language <em><abbr
+                                title="the machine can solve any computational problem given enough time and memory, no matter
+                                how complex">Turing-complete</abbr></em> (meaning the machine can solve any computational
+                                problem given enough time and memory, no matter how complex).</li>
+                    </ul>
+                </dl>
+                <dl>
+                    <dt><strong>Operator</strong></dt>
+                    <dd>A symbol that represents an operation.</dd>
+                </dl>
+                <table>
+                    <tr>
+                        <th>Assignment</th>
+                        <th>Arithmetic</th>
+                        <th>Relational</th>
+                        <th>Logical</th>
+                        <th>Special</th>
+                    </tr>
+                    <tr>
+                        <th><code>=</code></th>
+                        <th>&nbsp;</th>
+                        <th><code>==</code></th>
+                        <th><code>&&</code></th>
+                        <th><code>++</code></th>
+                    </tr>
+                    <tr>
+                        <th><code>+=</code></th>
+                        <th><code>+</code></th>
+                        <th><code>!=</code></th>
+                        <th><code>||</code></th>
+                        <th><code>--</code></th>
+                    </tr>
+                    <tr>
+                        <th><code>-=</code></th>
+                        <th><code>-</code></th>
+                        <th><code><</code></th>
+                        <th><code>!</code></th>
+                        <th><code>&nbsp;</code></th>
+                    </tr>
+                    <tr>
+                        <th><code>*=</code></th>
+                        <th><code>*</code></th>
+                        <th><code><=</code></th>
+                        <th><code>&nbsp;</code></th>
+                        <th><code>&nbsp;</code></th>
+                    </tr>
+                    <tr>
+                        <th><code>/=</code></th>
+                        <th><code>/</code></th>
+                        <th><code>></code></th>
+                        <th><code>&nbsp;</code></th>
+                        <th><code>&nbsp;</code></th>
+                    </tr>
+                    <tr>
+                        <th><code>%=</code></th>
+                        <th><code>%</code></th>
+                        <th><code>>=</code></th>
+                        <th><code>&nbsp;</code></th>
+                        <th><code>&nbsp;</code></th>
+                    </tr>
+                </table>
+                <dl>
+                    <dt><strong>Operand</strong></dt>
+                    <dd>The value used in an operation.</dd>
+                    <dd>An operator performs an operation on its operands and produce some result value.</dd>
+                </dl>
+                <dl>
+                    <dt><strong>Expression</strong></dt>
+                    <dd>a combination of one or more operators and operands that performs a computation.</dd>
+                </dl>
+                <p>An expression can be built up from other expressions: <br>
+                <pre class="java"><code>
+score = score - 10 * lateDays;
+                </code></pre>
+                <ul>
+                    <li>Consists of the arithmetic expression <code>10 * lateDays</code></li>
+                    <li>which itself is an operand of the arithmetic expression <code>score - •</code></li>
+                    <li>which is an operand of the assignment expression <code>score = •</code></li>
+                </ul>
+                <dl>
+                    <dt><strong>Pre-operators</strong></dt>
+                    <dd>They preform the operation first and will return the new value of the variable.</dd>
+                </dl>
+                <dl>
+                    <dt><strong>Post-operators</strong></dt>
+                    <dd>They perform the operation later and returns the old value of the variable.</dd>
+                </dl>
+                <pre class="java">
+                    <code>
+x = 4;
+y = ++x;   <===>   x = x + 1; y = x; (PRE increment)
+                    </code>
+                    <kbd>
+    Result:
+                    </kbd><samp>x = 5  y = 5</samp>
+                </pre>
+                <pre class="java">
+                    <code>
+x = 4;
+y = x++;   <===>   y = x; x = x + 1; (POST increment)
+                    </code>
+                    <kbd>
+    Result:
+                    </kbd><samp>x = 5  y = 4</samp>
+                </pre>
+                <dl>
+                    <dt><strong>Statement</strong></dt>
+                    <dd>A command issued to the computer to do something.</dd>
+                </dl>
+                <ul>
+                    <li>Statement is the unit of execution in a programming language.</li>
+                    <li>In Java, a statement must be contained inside some method.</li>
+                </ul>
+                <h4>Assignment statement</h4>
+                <pre class="java">
+                    <code>
+variable = expression;
+
+x = 4; // Store the value 4 in variable x
+x = x + 1; // Read the value in variable x,
+           // add 1 to it, then store result in variable x
+                    </code>
+                </pre>
+                <ul>
+                    <li>Variables on the RHS of the <code>=</code> operator are read/accessed.</li>
+                    <li>The variable on the LHS of the <code>=</code> operator is written/updated</li>
+                </ul>
+                <h4><code>if</code> statement</h4>
+                <pre class="java">
+                    <code>
+if (condition)
+    one-statement;
+
+if (condition) {
+    statement1;
+    statement2;
+    ...
+}
+                    </code>
+                </pre>
+                <h4><code>if-else</code> statement</h4>
+                <pre class="java">
+                    <code>
+if (condition)
+    one-statement;
+else
+    one-statement;
+
+if (condition) {
+    statement1;
+    statement2;
+    ...
+} else {
+    statement3;
+    statement4;
+    ...
+}
+                    </code>
+                </pre>
+                <h4><code>switch</code> statement</h4>
+                <pre class="java">
+                    <code>
+switch (integer-expression) {
+    case intVal1:
+        statement1-1;
+        statement1-2;
+        ...
+        break;
+    case intVal2:
+        statement2-1;
+        statement2-2;
+        ...
+        break;
+    ...
+    default:
+        statementD-1; //optional clause
+        statementD-2;
+        ...
+        break;
+}
+                    </code>
+                </pre>
+                <h4><code>while</code> loop</h4>
+                <pre class="java">
+                    <code>
+while (condition)
+    one-statement;
+
+while (condition) {
+    statement1;
+    statement2;
+    ...
+}
+                    </code>
+                </pre>
+                <h4><code>for</code> loop</h4>
+                <pre class="java">
+                    <code>
+for (init; term-cond; incr) {
+    statement1;
+    statement2;
+    ...
+}
+                    </code>
+                </pre>
+                <h4>Challenge yourself at <a href="../codes/LoopTracing.java"><code>LoopTracing.java</code></a>.</h4>
+            </section>
+        </main>
+        <footer>
+            <h3>If you want to contact me, please visit my <a href="contacts.html">contact page</a></h3>
+        </footer>
+    </body>
+</html>
+
+
