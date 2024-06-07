@@ -1,0 +1,48 @@
+body {
+    margin: 5vw;
+}
+
+main {
+    margin: 10vw;
+}
+
+.contactInfo {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+div.contactInfo a em {
+    color: #ECB159;
+}
+
+h2 {
+    border-bottom: 2px solid #8CB9BD;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.location {
+    float: right;
+    color: dimgrey;
+}
+
+.subtitle {
+    font: 20px italic;
+}
+
+.time {
+    float: right;
+    font: 20px italic;
+    color: dimgrey;
+}
+
+ul.information {
+    font-size: 20px;
+    margin: 1px;
+}
+

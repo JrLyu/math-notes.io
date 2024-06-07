@@ -16,18 +16,18 @@
     </head>
     <body>
         <header>
-            <h1>Jiuru's Personal Website</h1>
+            <div id="head">Jiuru's Personal Website</div>
         </header>
         <nav>
-            <h2>Menu Bar</h2>
-            <ul>
-                <li><a href="index.html">Main Page</a></li>
-                <li><a href="photographs/index.html">My Photos</a></li>
-                <li><a href="projects/index.html">Projects</a></li>
-                <li><a href="blogs/index.html">My Blogs</a></li>
-                <li><a href="contacts.html">Contact Me</a></li>
-            </ul>
-            <form>
+            <div id="menu">Menu</div>
+            <div class="selection">
+                <button><a href="index.html">Main Page</a></button>
+                <button><a href="photographs/index.html">My Photos</a></button>
+                <button><a href="projects/index.html">Projects</a></button>
+                <button><a href="blogs/index.html">My Blogs</a></button>
+                <button><a href="contacts.html">Contact Me</a></button>
+            </div>
+            <form class="searchBar">
                 <!-- Search Bar -->
                 <input type="search" name="q" placeholder="Search Something" />
                 <input type="submit" value="Search" />
@@ -35,7 +35,7 @@
         </nav>
         <main>
             <h1>Welcome to my webpage!</h1>
-            <h2><img src="images/myPhoto.png" sizes="1px, 2px" alt="My Photo"/> Hello! I am Jiuru.</h2>
+            <h2><a href="resume.html"><img src="images/myPhoto.png" sizes="1px, 2px" alt="My Photo"/></a> Hello! I am Jiuru.</h2>
             <p>My name is Jiuru, a sophomore majoring Applied Math and Statistics. In my leisure time, I like travelling and photograph on my way. If you are interested
                 in getting know more about picture I took, please visit <a href="photographs/index.html">photographs</a>.</p>
             <p>I also compose some learning notes from the classes I am taking and have taken. You can find attached files
