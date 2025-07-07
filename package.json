@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve math-notes.io",
     "build": "ng build math-notes.io",
-    "build:prod": "ng build math-notes.io --configuration production",
+    "build:prod": "ng build math-notes.io --configuration production --base-href /math-notes.io/",
     "watch": "ng build math-notes.io --watch --configuration development",
     "test": "ng test math-notes.io",
     "deploy": "npm run build:prod && cp -r dist/browser/* dist/ && rm -rf dist/browser"
