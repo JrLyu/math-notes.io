@@ -1,0 +1,43 @@
+<!-- Modern Navigation Bar -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a href="https://jrlyu.github.io/" target="_blank" class="logo-link">
+        <mat-icon class="logo-icon">home</mat-icon>
+        <span class="logo-text">Jiuru's WorkSpace</span>
+      </a>
+    </div>
+    <div class="nav-menu">
+      <a routerLink="/" 
+         class="nav-link" 
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact: true}">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </a>
+      <a routerLink="/about" 
+         class="nav-link" 
+         routerLinkActive="active">
+        <mat-icon>person</mat-icon>
+        <span>About</span>
+      </a>
+      <a routerLink="/gallery" 
+         class="nav-link" 
+         routerLinkActive="active">
+        <mat-icon>photo_library</mat-icon>
+        <span>Gallery</span>
+      </a>
+      <a routerLink="/demos" 
+         class="nav-link" 
+         routerLinkActive="active">
+        <mat-icon>code</mat-icon>
+        <span>Demos</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- Angular will swap in HomeComponent or DemoPageComponent here -->
+<router-outlet></router-outlet>

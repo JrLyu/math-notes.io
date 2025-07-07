@@ -1,0 +1,65 @@
+<div class="demos-container">
+  <div class="demos-header">
+    <h1>Interactive Demos</h1>
+    <p>Explore my interactive development projects and experiments</p>
+  </div>
+
+  <div class="demos-grid">
+    <div class="demo-card" routerLink="/submit-icon">
+      <div class="demo-preview">
+        <mat-icon class="demo-icon">send</mat-icon>
+      </div>
+      <div class="demo-content">
+        <h3>Submit Icon Animation</h3>
+        <p>An interactive submit button with loading states, animations, and colorful ribbon effects</p>
+        <div class="demo-tags">
+          <span class="tag">Angular</span>
+          <span class="tag">Animation</span>
+          <span class="tag">CSS</span>
+        </div>
+        <button mat-raised-button color="primary" class="demo-button">
+          <mat-icon>play_arrow</mat-icon>
+          Try Demo
+        </button>
+      </div>
+    </div>
+
+    <!-- Notes Section -->
+    <div class="demo-card" (click)="openNotes()">
+      <div class="demo-preview">
+        <mat-icon class="demo-icon">school</mat-icon>
+      </div>
+      <div class="demo-content">
+        <h3>Academic Notes</h3>
+        <p>My comprehensive collection of mathematics and computer science notes from coursework and research</p>
+        <div class="demo-tags">
+          <span class="tag">Mathematics</span>
+          <span class="tag">Notes</span>
+          <span class="tag">PDF</span>
+        </div>
+        <button mat-raised-button color="accent" class="demo-button">
+          <mat-icon>launch</mat-icon>
+          View Notes
+        </button>
+      </div>
+    </div>
+
+    <!-- Placeholder for future demos -->
+    <div class="demo-card coming-soon">
+      <div class="demo-preview">
+        <mat-icon class="demo-icon">construction</mat-icon>
+      </div>
+      <div class="demo-content">
+        <h3>More Demos Coming Soon</h3>
+        <p>I'm working on more interactive demos to showcase different development techniques</p>
+        <div class="demo-tags">
+          <span class="tag">Coming Soon</span>
+        </div>
+        <button mat-raised-button disabled class="demo-button">
+          <mat-icon>schedule</mat-icon>
+          In Development
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

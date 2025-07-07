@@ -1,0 +1,103 @@
+/* src/app/submit-icon/submit-icon.component.css */
+
+/* 1) Centering wrapper (cover full viewport) */
+.submit-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+/* bring the button above ribbons */
+.submit-btn {
+  position: relative;  /* establish new stacking context */
+  z-index: 2;          /* higher than ribbons */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 180px;
+  padding: 12px 24px;
+  border-radius: 24px;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  opacity: 0.9;
+}
+
+.submit-btn.idle { background-color: #bbdefb; color: #0d47a1; }
+.submit-btn.loading { background-color: #4169e1; color: white; }
+.submit-btn.done {
+  background-color: #bbdefb;   /* Light Blue 100, same as idle */
+  color: #0d47a1;              /* dark text to keep contrast */
+}
+.submit-btn:hover { opacity: 1; }
+.error-text { color: #f44336; font-weight: 500; }
+
+/* Icon sizing for submit button */
+.submit-btn .mat-icon {
+  font-size: 18px !important;
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* 3) Ribbons container: center on the button */
+/* keep ribbons behind */
+.ribbons-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;  /* lower than the button */
+}
+
+/* 4) Ribbon pieces (as before) */
+.ribbon {
+  --dx: 0px;
+  --r: 0deg;
+  position: absolute;
+  width: 6px;
+  height: 20px;
+  /* background: linear-gradient(45deg, #ff4081, #e040fb); */ /* remove this */
+  opacity: 0;
+  animation: ribbon-fall 3s ease-in-out forwards;
+  transform: translateX(calc(var(--dx))) rotate(var(--r));
+  animation-delay: var(--animation-delay, 0s);
+}
+
+@keyframes ribbon-fall {
+  0% {
+    opacity: 1;
+    transform:
+      translateX(calc(var(--dx)))
+      translateY(0)
+      rotate(var(--r));
+  }
+
+  /* slower pop up, higher, slight rotate */
+  25% {
+    opacity: 1;
+    transform:
+      translateX(calc(var(--dx) * 0.5))
+      translateY(-120px)              /* higher lift */
+      rotate(calc(var(--r) + 20deg)); /* gentler turn */
+  }
+
+  /* start descending gently */
+  60% {
+    opacity: 1;
+    transform:
+      translateX(calc(var(--dx) * 1.1))
+      translateY(300px)                /* slower drop */
+      rotate(calc(var(--r) + 60deg)); /* moderate rotation */
+  }
+
+  100% {
+    opacity: 0;
+    transform:
+      translateX(calc(var(--dx) * 1.5))
+      translateY(200px)
+      rotate(calc(var(--r) + 100deg)); /* final gentle spin */
+  }
+}

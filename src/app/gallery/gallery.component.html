@@ -1,0 +1,43 @@
+<div class="gallery-container">
+  <div class="gallery-header">
+    <h1>My Photography Gallery</h1>
+    <p>A collection of photographs taken during my travels and personal experiences</p>
+  </div>
+
+  <div class="gallery-grid">
+    <div 
+      *ngFor="let photo of photos" 
+      class="photo-card"
+      (click)="openPhoto(photo)">
+      <div class="photo-wrapper">
+        <img [src]="photo.src" [alt]="photo.alt" class="photo-image">
+        <div class="photo-overlay">
+          <mat-icon class="expand-icon">zoom_in</mat-icon>
+          <h3>{{ photo.title }}</h3>
+          <p *ngIf="photo.location">{{ photo.location }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo Modal -->
+  <div 
+    *ngIf="selectedPhoto" 
+    class="photo-modal"
+    (click)="closePhoto()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="close-button" (click)="closePhoto()">
+        <mat-icon>close</mat-icon>
+      </button>
+      <img [src]="selectedPhoto.src" [alt]="selectedPhoto.alt" class="modal-image">
+      <div class="modal-info">
+        <h2>{{ selectedPhoto.title }}</h2>
+        <p class="location" *ngIf="selectedPhoto.location">
+          <mat-icon>location_on</mat-icon>
+          {{ selectedPhoto.location }}
+        </p>
+        <p class="description">{{ selectedPhoto.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,143 @@
+.demos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.demos-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 15px;
+}
+
+.demos-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.demos-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.demos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.demo-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.demo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.demo-card.coming-soon {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.demo-card.coming-soon:hover {
+  transform: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.demo-preview {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 3rem;
+  text-align: center;
+  color: white;
+}
+
+.demo-icon {
+  font-size: 4rem !important;
+  width: 4rem !important;
+  height: 4rem !important;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto;
+}
+
+.demo-content {
+  padding: 2rem;
+}
+
+.demo-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.demo-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.demo-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  background: #667eea;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.demo-button {
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  min-width: 120px;
+}
+
+.demo-button mat-icon {
+  margin-right: 0.5rem;
+}
+
+/* Demo button icon sizing */
+.demo-button .mat-icon {
+  font-size: 18px !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin-right: 6px !important;
+}
+
+@media (max-width: 768px) {
+  .demos-header h1 {
+    font-size: 2rem;
+  }
+  
+  .demos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .demo-card {
+    max-width: 100%;
+  }
+}
