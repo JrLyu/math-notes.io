@@ -14,4 +14,8 @@ export class DemosComponent {
   openNotes() {
     window.open('https://jrlyu.github.io/notes.html', '_blank');
   }
+
+  openTravelLedger() {
+    window.open('https://jrlyu.github.io/travel-ledger/', '_blank');
+  }
 }
